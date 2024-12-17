@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Run our build lock check
+npm run check-build || exit 1
+
+# Run linting
+npm run lint || exit 1
+
+# Run tests
+npm run test || exit 1

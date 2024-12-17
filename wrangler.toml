@@ -1,0 +1,41 @@
+name = "done365"
+main = "src/worker/index.ts"
+compatibility_date = "2023-12-01"
+
+[build]
+command = "npm run build:worker"
+watch_dir = "src/worker"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "done365"
+database_id = "292bd0ca-fc57-4fbc-91ba-2fc71ea7948c"
+
+[[kv_namespaces]]
+binding = "CACHE"
+id = "3c9d33144817495bb35eacaf0c110980"
+
+[vars]
+ENVIRONMENT = "development"
+
+[env.development]
+name = "done365-dev"
+workers_dev = true
+
+[env.production]
+name = "done365-prod"
+workers_dev = false
+route = { pattern = "api.done365.app/*", zone_name = "done365.app" }
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "done365_prod"
+database_id = "292bd0ca-fc57-4fbc-91ba-2fc71ea7948c"
+
+[[env.production.kv_namespaces]]
+binding = "CACHE"
+id = "3c9d33144817495bb35eacaf0c110980"
+
+[limits]
+cpu_ms = 50000  # 50 seconds
+memory_mb = 512

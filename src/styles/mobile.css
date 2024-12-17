@@ -1,0 +1,205 @@
+/* Mobile Layout */
+.mobile-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mobile-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin-right: 1rem;
+}
+
+.app-title {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+  padding: 2rem 1rem;
+}
+
+.mobile-content {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 1rem;
+}
+
+/* Mobile Task Card */
+.mobile-task-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.task-content {
+  padding: 1rem;
+}
+
+.task-title {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+}
+
+.task-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 0.5rem;
+}
+
+.task-metadata {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.task-actions {
+  position: absolute;
+  right: -100px;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  background: #f5f5f5;
+}
+
+.task-actions button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background: #e0e0e0;
+  color: #333;
+}
+
+.swipe-hints {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: #999;
+  padding: 0.5rem;
+  background: #f9f9f9;
+}
+
+/* Mobile Bottom Navigation */
+.mobile-bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  border: none;
+  background: none;
+  color: #666;
+}
+
+.nav-item.active {
+  color: #007aff;
+}
+
+.nav-item .icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.nav-item .label {
+  font-size: 0.8rem;
+}
+
+.priority-indicator {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff3b30;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 360px) {
+  .mobile-header {
+    padding: 0.75rem;
+  }
+
+  .menu-toggle {
+    font-size: 1.2rem;
+  }
+
+  .app-title {
+    font-size: 1rem;
+  }
+
+  .mobile-content {
+    padding: 0.75rem;
+  }
+
+  .nav-item .icon {
+    font-size: 1.2rem;
+  }
+
+  .nav-item .label {
+    font-size: 0.7rem;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .mobile-task-card {
+    border: 2px solid #000;
+  }
+
+  .nav-item {
+    color: #000;
+  }
+
+  .nav-item.active {
+    color: #0056b3;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .mobile-nav,
+  .mobile-task-card,
+  .nav-item {
+    transition: none !important;
+    animation: none !important;
+  }
+}
